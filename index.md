@@ -19,7 +19,7 @@ The chapter contains nine interactive figures built with `ipywidgets` and `matpl
 
 1. Click **Open the interactive chapter in Binder** above (or the link at the top of Chapter 1).
 2. Wait for Binder to build/start the environment. The first launch can take a minute or two; later launches are faster.
-3. The chapter opens in the Jupyter Notebook interface. Use `Run` &rarr; `Run All Cells` and then move the sliders. If Jupyter asks whether to trust the notebook, click **Trust**.
+3. The chapter opens in the Jupyter Notebook interface. Use `Run` &rarr; `Run All Cells` and then move the sliders. If Jupyter asks whether to trust the notebook, click **Trust**. To hide the code in the interactive notebook, use **View → Collapse All Code**.
 
 In the reading version, the Python code is collapsed by default. Look for the **Source** toggle under each figure if you want to inspect or copy it. The interactive sections show a static preview of the default state; the sliders themselves are available in Binder.
 4. If Binder is unavailable, use the [Colab fallback](https://colab.research.google.com/github/Vsaggiomo/NanoSensors/blob/main/chapter-01.ipynb).
