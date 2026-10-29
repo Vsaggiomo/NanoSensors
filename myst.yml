@@ -3,6 +3,9 @@ version: 1
 project:
   title: Nanosensors
   description: An interactive open-book introduction to nanosensors, from single molecules to smart devices.
+  authors:
+    - name: Vittorio Saggiomo
+  license: CC-BY-NC-4.0
   github: Vsaggiomo/NanoSensors
   toc:
     - file: index.md

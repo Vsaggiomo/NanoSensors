@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use or adapt this book, please cite it as below."
+title: "Nanosensors: An Interactive Open Book"
+abstract: "An interactive open-book introduction to nanosensors, from single molecules to smart devices. The book is built with Jupyter Book 2 / MyST, with live interactive figures running in Binder."
+authors:
+  - family-names: Saggiomo
+    given-names: Vittorio
+date-released: "2026-10-29"
+url: "https://vsaggiomo.github.io/NanoSensors/"
+repository-code: "https://github.com/Vsaggiomo/NanoSensors"
+license: CC-BY-NC-4.0
+keywords:
+  - nanosensors
+  - sensors
+  - open textbook
+  - Jupyter Book
+  - interactive
