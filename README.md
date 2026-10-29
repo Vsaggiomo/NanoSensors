@@ -2,9 +2,9 @@
 
 **Read the book:** <https://vsaggiomo.github.io/NanoSensors/>
 
-**Interactive chapter (live Jupyter kernel):** <https://mybinder.org/v2/gh/Vsaggiomo/NanoSensors/HEAD?labpath=chapter-01.ipynb>
+**Interactive chapter (live Jupyter kernel):** <https://mybinder.org/v2/gh/Vsaggiomo/NanoSensors/HEAD?urlpath=notebooks/chapter-01.ipynb>
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Vsaggiomo/NanoSensors/HEAD?labpath=chapter-01.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Vsaggiomo/NanoSensors/HEAD?urlpath=notebooks/chapter-01.ipynb)
 
 The site is built with **Jupyter Book 2 / MyST** and deployed to **GitHub Pages** by GitHub Actions.
 
@@ -12,7 +12,7 @@ The chapter contains nine interactive `ipywidgets` + `matplotlib` figures. They 
 
 <https://colab.research.google.com/github/Vsaggiomo/NanoSensors/blob/main/chapter-01.ipynb>
 
-> **Why not in-page execution?** MyST/Thebe can execute the notebook against a Binder kernel, but the current MyST theme does not render `ipywidgets` controls reliably: the widget outputs are replaced by placeholders. The Binder JupyterLab route uses the full widget stack, so the sliders work. In-page support may improve as MyST/Thebe matures.
+> **Why not in-page execution?** MyST/Thebe can execute the notebook against a Binder kernel, but the current MyST theme does not render `ipywidgets` controls reliably: the widget outputs are replaced by placeholders. The Binder route uses the full Jupyter widget stack, so the sliders work. In-page support may improve as MyST/Thebe matures.
 
 ## Repository layout
 
