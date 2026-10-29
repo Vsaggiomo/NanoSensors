@@ -57,6 +57,10 @@ The output is written to `_build/html`. For GitHub Pages, set the base URL first
 BASE_URL=/NanoSensors myst build --html
 ```
 
+## Code visibility and interactive previews
+
+In the book-build notebook, code cells are tagged with MyST's `hide-input` so they render as a collapsed **Source** toggle. Static figure outputs remain visible. The nine interactive sections have a static preview image (the default state) plus a collapsed code cell; the live sliders are in the Binder notebook.
+
 ## Updating the chapter
 
 `chapter-01.ipynb` in this repository is the **book-build version** of the chapter. It differs from the Jupyter working copy in two ways:
