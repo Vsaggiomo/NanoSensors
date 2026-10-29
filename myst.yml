@@ -1,0 +1,14 @@
+version: 1
+
+project:
+  title: Nanosensors
+  description: An interactive open-book introduction to nanosensors, from single molecules to smart devices.
+  github: Vsaggiomo/NanoSensors
+  jupyter: true
+  toc:
+    - file: index.md
+    - file: chapter-01.ipynb
+      title: "Chapter 1 · Introduction to Nanosensors"
+
+site:
+  template: book-theme
