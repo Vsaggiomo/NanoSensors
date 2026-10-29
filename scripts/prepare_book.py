@@ -54,7 +54,26 @@ PREVIEW = {
     "surface_to_volume_demo": "int_9_surface_to_volume.png",
     "quantum_dot_demo": "int_10_quantum_dots.png",
 }
+PREVIEW_ALT = {
+    "int_1_measurement_chain.png": "Measurement-chain simulation showing an analogue signal and the reported glucose concentration, with sliders for true value, sensitivity, noise and ADC bits.",
+    "int_2_ph_indicator.png": "pH-indicator simulation showing the absorption spectrum and the fraction of the indicator in its base form.",
+    "int_3_fret_ruler.png": "FRET simulation showing efficiency versus donor-acceptor distance and the donor and acceptor emission spectra.",
+    "int_4_calibration_lod.png": "Calibration curve with noise band, limit of detection, linear range and saturation point.",
+    "int_5_selectivity.png": "Selectivity simulation showing reported concentration and relative error caused by an interferent.",
+    "int_6_accuracy_precision.png": "Dartboard and repeated-readings plot illustrating accuracy versus precision.",
+    "int_8_outbreak.png": "SIR outbreak simulation showing active and cumulative infections with and without an intervention.",
+    "int_9_surface_to_volume.png": "Surface-to-volume ratio and surface-atom fraction plotted against particle radius.",
+    "int_10_quantum_dots.png": "Quantum-dot emission wavelength versus diameter and the corresponding emission spectrum.",
+}
+STATIC_ALT = {
+    "fig_1_1_measurement_chain": "Block diagram of the measurement chain: stimulus, recognition element, transducer, read-out electronics, processing and display.",
+    "fig_1_3_sensor_taxonomy": "Tree diagram classifying chemical and physical sensors with familiar examples.",
+    "fig_1_5_history_timeline": "Compressed timeline of sensing milestones from the mercury thermometer to nanopore sequencing.",
+    "fig_1_6_scale_ladder": "Scale ladder comparing atoms, DNA, proteins, nanoparticles, viruses, bacteria, red blood cells, hair, ants and humans.",
+    "fig_1_7_dimensionality": "Four-panel diagram of 0D nanoparticles, 1D nanowires, 2D monolayers and 3D nanoporous materials.",
+}
 ASSET = re.compile(r'<img\s+src="(?P<src>[^"]+)"(?:\s+alt="(?P<alt>[^"]*)")?[^>]*>')
+SAVE_FIG = re.compile(r'save_fig\(fig,\s*["\'](?P<name>fig_[^"\']+)["\']\)')
 
 
 def main() -> int:
@@ -95,15 +114,26 @@ def main() -> int:
                 if fname is None or not (ROOT / "figures" / fname).exists():
                     missing_previews.append(fname or "unknown")
                 else:
+                    alt = PREVIEW_ALT.get(fname, "Static preview of the interactive figure")
                     cells.append(
                         new_markdown_cell(
-                            f"![Static preview of the interactive figure](figures/{fname})\n\n"
+                            f"![{alt}](figures/{fname})\n\n"
                             "*Static preview of the default state. "
                             f"[Open the chapter in Binder]({BINDER}) to move the sliders.*"
                         )
                     )
             else:
-                cell.metadata["tags"] = ["hide-input"]
+                cell.metadata["tags"] = ["hide-input", "remove-output"]
+                fig_match = SAVE_FIG.search(source)
+                if fig_match:
+                    stem = fig_match.group("name")
+                    image = ROOT / "figures" / f"{stem}.png"
+                    alt = STATIC_ALT.get(stem)
+                    if image.exists() and alt:
+                        cell.outputs = []  # the Markdown image below replaces the output
+                        cells.append(cell)
+                        cells.append(new_markdown_cell(f"![{alt}](figures/{stem}.png)"))
+                        continue
         cells.append(cell)
 
     nb.cells = cells

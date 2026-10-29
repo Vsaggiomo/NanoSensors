@@ -31,8 +31,9 @@ The chapter contains nine interactive `ipywidgets` + `matplotlib` figures. In Bi
 │   └── chapter-01.ipynb      # clean editable notebook for Binder / Colab
 ├── figures/                  # figures and default-state previews
 ├── scripts/
-│   ├── prepare_book.py       # source/ -> reading copy
-│   └── generate_previews.py  # regenerate default-state previews
+│   ├── prepare_book.py          # source/ -> reading copy
+│   ├── generate_previews.py     # regenerate default-state previews
+│   └── strip_widget_outputs.py  # remove stale saved widget outputs
 ├── requirements.txt          # pinned Binder environment
 ├── LICENSE                   # CC BY-NC 4.0
 ├── CITATION.cff              # citation metadata
@@ -80,7 +81,10 @@ After editing `source/chapter-01.ipynb`:
 # 1. regenerate the static previews from the default widget values
 python scripts/generate_previews.py
 
-# 2. regenerate the MyST reading copy (frontmatter, note, tags, previews)
+# 2. optionally remove stale saved widget outputs from the clean notebook
+python scripts/strip_widget_outputs.py
+
+# 3. regenerate the MyST reading copy (frontmatter, note, tags, previews)
 python scripts/prepare_book.py
 ```
 
@@ -92,7 +96,7 @@ The reading copy adds:
 - MyST cell tags (`hide-input`, `remove-output`, `remove-cell`);
 - the nine static default-state previews.
 
-`source/chapter-01.ipynb` stays clean: no frontmatter, no previews, no reading-only note, and no MyST tags. That is what Binder and Colab open.
+`source/chapter-01.ipynb` stays clean: no frontmatter, no previews, no reading-only note, no MyST tags, and no saved widget outputs. That is what Binder and Colab open. All figures on the reading page have descriptive alt text.
 
 ## Deployment
 
