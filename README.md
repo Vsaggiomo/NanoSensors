@@ -8,7 +8,7 @@
 
 The site is built with **Jupyter Book 2 / MyST** and deployed to **GitHub Pages** by GitHub Actions.
 
-The chapter contains nine interactive `ipywidgets` + `matplotlib` figures. They require a live Jupyter kernel, so the interactive version opens in **Binder** (full JupyterLab). The GitHub Pages site is the reading version with static figures. A **Colab fallback** is available at:
+The chapter contains nine interactive `ipywidgets` + `matplotlib` figures. In Binder, choose `Run` → `Run All Cells`; if Jupyter asks whether to trust the notebook, click **Trust**. They require a live Jupyter kernel, so the interactive version opens in **Binder** (full JupyterLab). The GitHub Pages site is the reading version with static figures. A **Colab fallback** is available at:
 
 <https://colab.research.google.com/github/Vsaggiomo/NanoSensors/blob/main/chapter-01.ipynb>
 

@@ -19,7 +19,7 @@ The chapter contains nine interactive figures built with `ipywidgets` and `matpl
 
 1. Click **Open the interactive chapter in Binder** above (or the link at the top of Chapter 1).
 2. Wait for Binder to build/start the environment. The first launch can take a minute or two; later launches are faster.
-3. The chapter opens in the Jupyter Notebook interface. Use `Run` &rarr; `Run All Cells` and then move the sliders.
+3. The chapter opens in the Jupyter Notebook interface. Use `Run` &rarr; `Run All Cells` and then move the sliders. If Jupyter asks whether to trust the notebook, click **Trust**.
 4. If Binder is unavailable, use the [Colab fallback](https://colab.research.google.com/github/Vsaggiomo/NanoSensors/blob/main/chapter-01.ipynb).
 
 **Why not in-page?** MyST’s in-page execution (Thebe) can execute the Python cells, but the current MyST theme does not render `ipywidgets` controls reliably; it shows placeholders instead of sliders. The Binder route uses the real JupyterLab widget stack, so the sliders work.
