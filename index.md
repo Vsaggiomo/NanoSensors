@@ -6,16 +6,23 @@ title: Nanosensors
 
 **An interactive open book — from single molecules to smart devices.**
 
-This site is the web edition of the book. It is built with Jupyter Book 2 / MyST, and the interactive figures are powered by a live Jupyter kernel through Binder.
+This is the web edition of the book, built with Jupyter Book 2 / MyST and deployed on GitHub Pages.
+
+<p style="margin: 28px 0 24px 0;">
+<a href="chapter-01/" style="display:inline-block; padding:12px 20px; margin:0 10px 10px 0; background:#1f4e79; color:#fff; border-radius:6px; text-decoration:none; font-weight:600;">Read Chapter 1 &rarr;</a>
+<a href="https://mybinder.org/v2/gh/Vsaggiomo/NanoSensors/HEAD?labpath=chapter-01.ipynb" style="display:inline-block; padding:12px 20px; margin:0 10px 10px 0; background:#e76f51; color:#fff; border-radius:6px; text-decoration:none; font-weight:600;">Open the interactive chapter in Binder &rarr;</a>
+</p>
 
 ## How to use the interactive figures
 
-1. Open [Chapter 1 · Introduction to Nanosensors](chapter-01.ipynb).
-2. Click the **power / “Live code”** button at the top of the page.
-3. Wait for Binder to start the Jupyter kernel (the first launch can take a minute or two).
-4. Move a slider or change a dropdown, and the figure will update live.
+The chapter contains nine interactive figures built with `ipywidgets` and `matplotlib`. They need a live Jupyter kernel, so they run in **Binder**, not in the static page:
 
-If the in-page kernel does not start, use the **Launch** button to open the chapter in Binder or Colab, where the same notebook runs in a full Jupyter environment.
+1. Click **Open the interactive chapter in Binder** above (or the link at the top of Chapter 1).
+2. Wait for Binder to build/start the environment. The first launch can take a minute or two; later launches are faster.
+3. The chapter opens in JupyterLab. Run the cells (`Run` &rarr; `Run All Cells`) and use the sliders.
+4. If Binder is unavailable, use the [Colab fallback](https://colab.research.google.com/github/Vsaggiomo/NanoSensors/blob/main/chapter-01.ipynb).
+
+**Why not in-page?** MyST’s in-page execution (Thebe) can execute the Python cells, but the current MyST theme does not render `ipywidgets` controls reliably; it shows placeholders instead of sliders. The Binder route uses the real JupyterLab widget stack, so the sliders work.
 
 ## Chapter 1
 
@@ -27,4 +34,4 @@ The first chapter builds the conceptual toolkit for the rest of the book:
 - why sensors matter for exploration, AI and public health;
 - what changes at the nanoscale, and what a “nanosensor” actually is.
 
-[Start reading Chapter 1 →](chapter-01.ipynb)
+[Start reading Chapter 1 &rarr;](chapter-01.ipynb)
